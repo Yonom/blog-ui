@@ -4,6 +4,7 @@ import {
 	PostFullFragment,
 	PublicationFragment,
 } from '../../generated/graphql';
+import { ThemeProvider } from '../theme-provider';
 
 type AppContext = {
 	publication: PublicationFragment;
@@ -32,7 +33,9 @@ const AppProvider = ({
 				page: page ?? null,
 			}}
 		>
-			{children}
+			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+				{children}
+			</ThemeProvider>
 		</AppContext.Provider>
 	);
 };

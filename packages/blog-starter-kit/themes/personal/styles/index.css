@@ -46,3 +46,16 @@
     background-color: transparent;
     color: #ddd;
 }
+
+.dark article :where(div[data-node-type='callout']):not(:where([class~='not-prose'] *)) {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+}
+
+.dark article :where(div[data-node-type='callout-emoji']):not(:where([class~='not-prose'] *)) {
+    background: #475569;
+}
+
+.dark article img:not(:where([class~='not-invert'] *)) {
+    filter: hue-rotate(180deg) invert(100%);
+}
