@@ -17,7 +17,10 @@ export function ModeToggle() {
 
 	return (
 		<Button
-			onClick={toggleTheme}
+			onClick={() => {
+				if (!(document as any).startViewTransition) toggleTheme();
+				(document as any).startViewTransition(toggleTheme);
+			}}
 			label=""
 			type="outline"
 			className="!p-2"
